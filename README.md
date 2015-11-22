@@ -30,15 +30,15 @@ You need SASS in your system, if you don't have, install it with:
 
 You should make changes only in `./src` directory. Before starting making 
 changes, you should:
-> npm run watch
+> make watch
 
 Before deploy, run:
-> npm run dist
+> make release
 
 This currently does uglification of scripts.
 
 Working in a dummy server also wouldn't hurt:
-> npm run start
+> npm start
 
 `./dist`, `./static` and `./index.html` are the ones need to be served. You 
 don't need any of other files on your server.
