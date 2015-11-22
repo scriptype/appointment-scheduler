@@ -1,0 +1,10 @@
+.sidebar {
+  float: left;
+  height: 100%;
+  background: #eee;
+
+  // Just hide for MVP reasons
+  width: 0; // 64px;
+  visibility: hidden;
+  opacity: 0;
+}

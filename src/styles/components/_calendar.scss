@@ -1,0 +1,173 @@
+@import "../colors";
+
+$calendar-transition-time: .2s;
+$calendar-tbody-height: 500px;
+
+$calendar-appointment-status-future: aquamarine;
+$calendar-appointment-status-in-progress: lightgreen;
+$calendar-appointment-status-on-hold: orange;
+$calendar-appointment-status-failed: $red;
+$calendar-appointment-status-elected: $blue;
+
+@media (max-width: 1099px) {
+  .calendar {
+    &__controls {
+      height: 72px;
+      font-size: 1.2em;
+
+      &-input {
+        width: 70px
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .calendar {
+    &__controls {
+      height: 96px;
+      font-size: 1.5em;
+
+      &-input {
+        width: 100px
+      }
+    }
+  }
+}
+
+.calendar {
+  min-height: inherit;
+
+  &__controls {
+    text-align: center;
+    font-family: georgia, times, serif;
+    color: $dark-gray;
+
+    &-label {
+      padding: 0 1em;
+    }
+
+    &-input {
+      padding: 10px;
+      font-size: inherit;
+      text-align: center;
+      border: none;
+      border-bottom: 2px solid $yellow;
+      background: transparent;
+      transition: all $calendar-transition-time;
+
+      &:focus {
+        background: rgba($yellow, .25);
+        outline: none
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    min-height: inherit;
+    font-size: .8em;
+
+    &__head {
+      text-align: center;
+
+      &-cell-name {
+        display: inline-block;
+        color: $gray;
+      }
+
+      &-cell-add-button {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        line-height: 12px;
+        margin: 0 5px;
+        color: $dark-gray;
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 100%;
+        transition: all $calendar-transition-time;
+      }
+
+      &-cell:hover &-cell-add-button {
+        background: $yellow;
+      }
+    }
+
+    &__body {
+      height: 100%;
+    }
+
+    &__row {
+      // Dynamically calculate height of rows, depending on row count
+      $i: 0;
+      @while $i < 5 {
+        &--total-#{$i} {
+          height: calc(#{$calendar-tbody-height} / #{$i + 1});
+        }
+        $i: $i + 1;
+      }
+    }
+
+    &__cell {
+      width: calc(100% / 7);
+      position: relative;
+
+      &:not(:first-child) {
+        border-left: 1px solid $silver;
+      }
+    }
+
+    &__appointment {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 75%;
+      height: 56px;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: .8em;
+      border-radius: 4px;
+      background: rgba(#000, .1);
+      color: $dark-gray;
+      cursor: pointer;
+      transition: all $calendar-transition-time;
+
+      &:hover {
+        background: $dark-gray;
+        color: #fff;
+      }
+
+      &-status {
+        width: 5px;
+        border-radius: 1px;
+        height: 100%;
+        display: inline-block;
+
+        &--future       { background: $calendar-appointment-status-future }
+        &--in-progress  { background: $calendar-appointment-status-in-progress }
+        &--on-hold      { background: $calendar-appointment-status-on-hold }
+        &--failed       { background: $calendar-appointment-status-failed }
+        &--elected      { background: $calendar-appointment-status-elected }
+      }
+
+      &-company {
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        right: 10px;
+        transform: translateY(-50%);
+        word-break: break-all;
+        letter-spacing: .1em;
+      }
+
+      &-hour {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+  }
+
+}
