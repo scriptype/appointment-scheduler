@@ -38,8 +38,8 @@ Before deploy, run:
 Working in a dummy server also wouldn't hurt:
 > npm start
 
-`./dist`, `./static` and `./index.html` are the ones need to be served. You 
-don't need any of other files on your server.
+`./dist` is the one need to be served. You don't need any of other files on your 
+server.
 
 
 ## Development Notes

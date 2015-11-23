@@ -9,10 +9,13 @@ JS_INPUT = $(SRC)/scripts/app.js
 JS_OUTPUT = $(DIST)/app
 
 all: clean copy_static html css js
+	@make finish_message type=build
 
 release: copy_static min.html min.css min.js
+	@make finish_message type=release
 
 clean:
+	@echo Cleaning $(DIST) folder
 	@rm -rf $(DIST)
 	@mkdir $(DIST)
 
@@ -26,9 +29,8 @@ watchJS:
 	@$(BIN)/watchify --delay=100 --verbose -t babelify $(JS_INPUT) -o $(JS_OUTPUT).js -d
 
 html:
-	@echo "Creating markup..."
+	@echo Creating markup...
 	@make interpolate_html SCRIPT_FILE=app.js STYLE_FILE=style.css
-	@make finish_message type=markup
 
 interpolate_html:
 	@cp $(SRC)/index.html $(DIST)
@@ -48,28 +50,23 @@ interpolate_html:
 js:
 	@echo Building scripts...
 	@$(BIN)/browserify $(JS_INPUT) -t babelify --outfile $(JS_OUTPUT).js
-	@make finish_message type=scripts
 
 css:
 	@echo Building styles...
 	@sass --scss --update $(CSS_INPUT):$(CSS_OUTPUT).css
 	@$(BIN)/postcss --use autoprefixer $(CSS_OUTPUT).css -d $(DIST)
-	@make finish_message type=styles
 
 min.js:
 	@echo Minifying scripts...
 	@$(BIN)/uglifyjs $(JS_OUTPUT).js -o $(JS_OUTPUT).min.js
-	@make finish_message type='minifying scripts'
 
 min.css:
 	@echo Minifying styles...
 	@sass --scss --update --style compressed $(CSS_OUTPUT).css:$(CSS_OUTPUT).min.css
-	@make finish_message type='minifying styles'
 
 min.html:
 	@echo Updating markup...
 	@make interpolate_html SCRIPT_FILE=app.min.js STYLE_FILE=style.min.css
-	@make finish_message type=markup
 
 copy_static:
 	@echo Copying static files...
@@ -77,7 +74,6 @@ copy_static:
 	@mkdir -p $(DIST)/images
 	@cp -r $(SRC)/fonts/ $(DIST)/fonts
 	@cp -r $(SRC)/images/ $(DIST)/images
-	@make finish_message type='copying static files'
 
 finish_message:
 	@echo Finished $(type). `date`
