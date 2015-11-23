@@ -57,22 +57,22 @@ css:
 	@make finish_message type=styles
 
 min.js:
-	@echo "Minifying scripts..."
+	@echo Minifying scripts...
 	@$(BIN)/uglifyjs $(JS_OUTPUT).js -o $(JS_OUTPUT).min.js
 	@make finish_message type='minifying scripts'
 
 min.css:
-	@echo "Minifying styles..."
+	@echo Minifying styles...
 	@sass --scss --update --style compressed $(CSS_OUTPUT).css:$(CSS_OUTPUT).min.css
 	@make finish_message type='minifying styles'
 
 min.html:
-	@echo "Updating markup..."
-	@make interpolate_html SCRIPT_FILE=app.min.js STYLE_FILE=style.css
+	@echo Updating markup...
+	@make interpolate_html SCRIPT_FILE=app.min.js STYLE_FILE=style.min.css
 	@make finish_message type=markup
 
 copy_static:
-	@echo "Copying static files..."
+	@echo Copying static files...
 	@mkdir -p $(DIST)/fonts
 	@mkdir -p $(DIST)/images
 	@cp -r $(SRC)/fonts/ $(DIST)/fonts
@@ -80,5 +80,5 @@ copy_static:
 	@make finish_message type='copying static files'
 
 finish_message:
-	@echo "Finished $(type). `date`"
+	@echo Finished $(type). `date`
 	@echo '====='
