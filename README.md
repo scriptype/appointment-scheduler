@@ -35,8 +35,6 @@ changes, you should:
 Before deploy, run:
 > make release
 
-This currently does uglification of scripts.
-
 Working in a dummy server also wouldn't hurt:
 > npm start
 

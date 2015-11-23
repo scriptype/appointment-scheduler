@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server dist"
   },
   "author": "M. Enes Ertarhanacı",
   "license": "ISC",
@@ -20,7 +20,8 @@
     "http-server": "*",
     "postcss-cli": "^2.3.2",
     "uglify-js": "^2.5.0",
-    "watch": "^0.16.0"
+    "watch": "^0.16.0",
+    "handlebars": "*"
   },
   "dependencies": {
     "fluxxor": "^1.7.3",
