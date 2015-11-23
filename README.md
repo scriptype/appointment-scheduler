@@ -13,8 +13,8 @@ code architecture and development infrastructure is almost complete.
 Since this release had to be done in an extremely short timeframe, it includes 
 only the very basics of everything. And no tests :(
 
-### Todo
 
+## Todo
  - Provide the basic functionality of adding and browsing appointments
  - Editing/Viewing appointments
  - Provide the searching/filtering functionality
