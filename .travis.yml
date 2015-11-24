@@ -6,13 +6,7 @@ node_js:
   - iojs
 os:
   - linux
-  - osx
 install:
-  - rm -rf ~/.nvm
-  - git clone https://github.com/creationix/nvm.git ~/.nvm
-  - source ~/.nvm/nvm.sh
-  - nvm install $NODE_VERSION
-  - node --version
   - npm install
   - gem install sass
 cache:
