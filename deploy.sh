@@ -2,7 +2,7 @@
 # see: https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 
 mkdir gh-pages
-cp -r dist/ gh-pages
+cp -R dist/* gh-pages
 cd gh-pages
 
 git init
