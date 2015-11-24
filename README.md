@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/scriptype/appointment-scheduler.svg "Build Status")
+
 # HR Scheduler
 
 HR Scheduler is a Google-Calendar-like interface that users can make appointment 
