@@ -58,8 +58,7 @@ between actions, components and stores.
  - Also [Babelify](http://babeljs.io) transformer added to browserify, because 
  ES2015 is cool. And we have polyfills as well.
 
- - As I don't like having to write boilerplate code, I didn't use any build 
- systems, but npm itself in a basic way to get stuff done.
+ - I've used `Makefile` for build automation.
 
  - PostCSS/Autoprefixer and SASS have vastly improved the CSS writing experience.
  
