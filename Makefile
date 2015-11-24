@@ -11,13 +11,13 @@ JS_OUTPUT = $(DIST)/app
 all: clean copy_static html css js
 	@make finish_message type=build
 
-release: copy_static min.html min.css min.js
-	@make finish_message type=release
-
 clean:
 	@echo Cleaning $(DIST) folder
 	@rm -rf $(DIST)
 	@mkdir $(DIST)
+
+release: copy_static min.html min.css min.js
+	@make finish_message type=release
 
 watch: clean copy_static html
 	@make watchSASS & make watchJS
