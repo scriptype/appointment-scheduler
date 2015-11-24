@@ -10,8 +10,7 @@ Current version includes very few real data-binding and it's mostly just a
 mockup with a detailed UI design. Even though seems no interaction can be made, 
 code architecture and development infrastructure is almost complete.
 
-Since this release had to be done in an extremely short timeframe, it includes 
-only the very basics of everything. And no tests :(
+It currently includes only the very basics of everything. And no tests :(
 
 
 ## Todo
