@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server dist"
+    "start": "http-server dist",
+    "test": "echo no tests"
   },
   "author": "M. Enes Ertarhanacı",
   "license": "ISC",
