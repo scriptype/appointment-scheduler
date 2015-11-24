@@ -7,6 +7,8 @@ node_js:
 os:
   - linux
   - osx
+before_install:
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 install:
   - npm install
   - gem install sass
