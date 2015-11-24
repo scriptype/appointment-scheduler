@@ -13,4 +13,4 @@ git config user.email "travis@travis-ci.org"
 git add .
 git commit -m "Deploy to GitHub Pages"
 
-git push --force --quiet "https://${GH_TOKEN}@${GH-REF}" origin gh-pages > /dev/null
+git push --force --quiet "https://${GH_TOKEN}@github.com/scriptype/appointment-scheduler.git" origin gh-pages > /dev/null
