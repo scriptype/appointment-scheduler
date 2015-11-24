@@ -10,8 +10,6 @@ Current version includes very few real data-binding and it's mostly just a
 mockup with a detailed UI design. Even though seems no interaction can be made, 
 code architecture and development infrastructure is almost complete.
 
-It currently includes only the very basics of everything. And no tests :(
-
 
 ## Todo
  - Provide the basic functionality of adding and browsing appointments
