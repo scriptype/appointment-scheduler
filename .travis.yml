@@ -9,5 +9,8 @@ node_js:
 install:
   - npm install
   - gem install sass
+cache:
+  directories:
+  - node_modules
 script: make
 after_success: make release
