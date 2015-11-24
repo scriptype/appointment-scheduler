@@ -4,6 +4,9 @@ node_js:
   - 4.0
   - 0.12
   - iojs
+os:
+  - linux
+  - osx
 install:
   - npm install
   - gem install sass
