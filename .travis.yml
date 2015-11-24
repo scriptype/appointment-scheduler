@@ -1,5 +1,5 @@
-language: "node_js"
-node_js: "4.1"
-install: "npm install"
-script: "make"
-deploy: "make release"
+language: node_js
+node_js: 4.1
+install: npm install
+script: make
+after_success: make release
